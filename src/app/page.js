@@ -3,6 +3,7 @@ import Link from "next/link";
 import Button from "@/components/Button";
 import SectionTitle from "@/components/SectionTitle";
 import CoffeeCard from "@/components/CoffeeCard";
+import Reveal from "@/components/Reveal";
 import { FEATURED_COFFEES } from "@/data/menu";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -21,13 +22,13 @@ export default function HomePage() {
           {/* Left Column: Headline & Description */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
             {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4A2E1B]/60 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-semibold tracking-widest uppercase mb-6 shadow-sm">
+            <div className="hero-eyebrow inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4A2E1B]/60 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-semibold tracking-widest uppercase mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
               Specialty Coffee &amp; Roastery
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-[#F5F0E8] leading-[1.1] tracking-tight mb-6">
+            <h1 className="hero-title font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-[#F5F0E8] leading-[1.1] tracking-tight mb-6">
               Crafted Coffee, <br />
               <span className="text-[#D4AF37] italic font-normal">
                 Warm Moments.
@@ -35,14 +36,14 @@ export default function HomePage() {
             </h1>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-[#F5F0E8]/80 font-light leading-relaxed mb-8 max-w-lg">
+            <p className="hero-copy text-base sm:text-lg text-[#F5F0E8]/80 font-light leading-relaxed mb-8 max-w-lg">
               Carefully crafted coffee for every moment of your day. Specialty
               single-origin beans roasted to perfection, served in a warm and
               serene sanctuary.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+            <div className="hero-actions flex flex-wrap items-center gap-4 w-full sm:w-auto">
               <Button href="/menu" variant="primary" size="lg" className="w-full sm:w-auto">
                 Explore Menu
               </Button>
@@ -52,7 +53,7 @@ export default function HomePage() {
             </div>
 
             {/* Trust / Stats Highlights */}
-            <div className="mt-12 pt-8 border-t border-[#D4AF37]/15 grid grid-cols-3 gap-6 w-full max-w-md">
+            <div className="hero-stats mt-12 pt-8 border-t border-[#D4AF37]/15 grid grid-cols-3 gap-6 w-full max-w-md">
               <div>
                 <span className="block font-serif text-2xl sm:text-3xl font-bold text-[#D4AF37]">
                   100%
@@ -81,7 +82,7 @@ export default function HomePage() {
           </div>
 
           {/* Right Column: Large High-Resolution Hero Coffee Image */}
-          <div className="lg:col-span-6 relative flex justify-center items-center">
+          <div className="hero-visual lg:col-span-6 relative flex justify-center items-center">
             {/* Gold Accent Ring Decorative */}
             <div className="absolute -inset-4 sm:-inset-6 rounded-2xl border border-[#D4AF37]/20 -rotate-2 pointer-events-none hidden sm:block" />
 
@@ -134,10 +135,10 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 12. ABOUT SECTION */}
       {/* ========================================================================= */}
-      <section id="about" className="relative px-4 sm:px-6 lg:px-8 py-12">
+      <Reveal as="section" id="about" className="relative px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Large Cafe Interior Image */}
-          <div className="lg:col-span-6 order-2 lg:order-1 relative">
+          <div className="scroll-image lg:col-span-6 order-2 lg:order-1 relative">
             <div className="relative h-[380px] sm:h-[460px] rounded-lg overflow-hidden border border-[#D4AF37]/30 shadow-2xl bg-[#25170E] group">
               <Image
                 src="/images/cafe-interior.jpg"
@@ -162,21 +163,21 @@ export default function HomePage() {
               className="mb-6"
             />
 
-            <p className="text-base sm:text-lg text-[#F5F0E8]/85 font-light leading-relaxed mb-6">
+            <p className="scroll-fade text-base sm:text-lg text-[#F5F0E8]/85 font-light leading-relaxed mb-6" style={{ "--reveal-delay": "160ms" }}>
               Coffee shop yang menghadirkan kopi berkualitas dalam suasana hangat
               dan nyaman. Setiap cangkir kami racik dengan perhatian mendalam
               terhadap rasa, aroma, dan pengalaman tak terlupakan bagi setiap
               pengunjung.
             </p>
 
-            <p className="text-sm sm:text-base text-[#F5F0E8]/70 font-light leading-relaxed mb-8">
+            <p className="scroll-fade text-sm sm:text-base text-[#F5F0E8]/70 font-light leading-relaxed mb-8" style={{ "--reveal-delay": "240ms" }}>
               Kami percaya bahwa secangkir kopi terbaik bermula dari biji pilihan
               yang dipetik dengan teliti, disangrai dengan presisi, dan diseduh
               oleh tangan-tangan barista yang berdedikasi penuh pada seni perkopian.
             </p>
 
             {/* Feature Bullets */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full mb-8">
+            <div className="scroll-fade grid grid-cols-1 sm:grid-cols-2 gap-4 w-full mb-8" style={{ "--reveal-delay": "320ms" }}>
               <div className="flex items-start gap-3 p-3.5 rounded-sm bg-[#4A2E1B]/30 border border-[#D4AF37]/20">
                 <div className="w-7 h-7 rounded-full bg-[#D4AF37]/20 flex items-center justify-center shrink-0 text-[#D4AF37]">
                   ✓
@@ -206,17 +207,15 @@ export default function HomePage() {
               </div>
             </div>
 
-            <Button href="/services" variant="secondary" size="md">
-              Discover Our Services
-            </Button>
+            <div className="scroll-fade" style={{ "--reveal-delay": "400ms" }}><Button href="/services" variant="secondary" size="md">Discover Our Services</Button></div>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* ========================================================================= */}
       {/* 13. FEATURED COFFEE SECTION */}
       {/* ========================================================================= */}
-      <section id="featured" className="relative px-4 sm:px-6 lg:px-8 py-12 bg-gradient-to-b from-transparent via-[#25170E]/40 to-transparent">
+      <Reveal as="section" id="featured" className="relative px-4 sm:px-6 lg:px-8 py-12 bg-gradient-to-b from-transparent via-[#25170E]/40 to-transparent">
         <div className="max-w-7xl mx-auto">
           <SectionTitle
             subtitle="Curated Favorites"
@@ -228,24 +227,24 @@ export default function HomePage() {
 
           {/* 3 Coffee Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
-            {FEATURED_COFFEES.map((item) => (
-              <CoffeeCard key={item.id} item={item} />
+            {FEATURED_COFFEES.map((item, index) => (
+              <CoffeeCard key={item.id} item={item} className="scroll-card" style={{ "--reveal-delay": `${index * 120 + 160}ms` }} />
             ))}
           </div>
 
           {/* View Full Menu CTA */}
-          <div className="flex justify-center">
+          <div className="scroll-fade flex justify-center" style={{ "--reveal-delay": "520ms" }}>
             <Button href="/menu" variant="primary" size="lg">
               View Full Menu
             </Button>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* ========================================================================= */}
       {/* VALUE PILLARS / EXPERIENCE HIGHLIGHTS */}
       {/* ========================================================================= */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12">
+      <Reveal as="section" className="relative px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-7xl mx-auto">
           <SectionTitle
             subtitle="The EMBER Standard"
@@ -257,7 +256,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Pillar 1 */}
-            <div className="p-6 rounded-sm bg-[#22160E] border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 hover:-translate-y-1">
+            <div className="scroll-card p-6 rounded-sm bg-[#22160E] border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 hover:-translate-y-1" style={{ "--reveal-delay": "100ms" }}>
               <div className="w-12 h-12 rounded-sm bg-[#4A2E1B] border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] mb-5">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -272,7 +271,7 @@ export default function HomePage() {
             </div>
 
             {/* Pillar 2 */}
-            <div className="p-6 rounded-sm bg-[#22160E] border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 hover:-translate-y-1">
+            <div className="scroll-card p-6 rounded-sm bg-[#22160E] border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 hover:-translate-y-1" style={{ "--reveal-delay": "200ms" }}>
               <div className="w-12 h-12 rounded-sm bg-[#4A2E1B] border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] mb-5">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -287,7 +286,7 @@ export default function HomePage() {
             </div>
 
             {/* Pillar 3 */}
-            <div className="p-6 rounded-sm bg-[#22160E] border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 hover:-translate-y-1">
+            <div className="scroll-card p-6 rounded-sm bg-[#22160E] border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 hover:-translate-y-1" style={{ "--reveal-delay": "300ms" }}>
               <div className="w-12 h-12 rounded-sm bg-[#4A2E1B] border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] mb-5">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -302,7 +301,7 @@ export default function HomePage() {
             </div>
 
             {/* Pillar 4 */}
-            <div className="p-6 rounded-sm bg-[#22160E] border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 hover:-translate-y-1">
+            <div className="scroll-card p-6 rounded-sm bg-[#22160E] border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 hover:-translate-y-1" style={{ "--reveal-delay": "400ms" }}>
               <div className="w-12 h-12 rounded-sm bg-[#4A2E1B] border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] mb-5">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -317,32 +316,30 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* ========================================================================= */}
       {/* 14. CTA SECTION */}
       {/* ========================================================================= */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
+      <Reveal as="section" className="relative px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto rounded-xl overflow-hidden bg-gradient-to-r from-[#4A2E1B] via-[#3B2415] to-[#2B1A0F] border border-[#D4AF37]/40 shadow-2xl p-8 sm:p-12 lg:p-16 relative">
           {/* Subtle Background Glow */}
           <div className="absolute -top-24 -right-24 w-80 h-80 bg-[#D4AF37]/20 rounded-full blur-[90px] pointer-events-none" />
 
           <div className="relative z-10 max-w-2xl">
-            <span className="text-[#D4AF37] text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase mb-3 block">
+            <span className="scroll-fade text-[#D4AF37] text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase mb-3 block">
               Warm Welcome Awaits
             </span>
 
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F5F0E8] leading-tight mb-6">
-              Your Next Favorite Cup Is Waiting.
-            </h2>
+            <div className="text-reveal-clip"><h2 className="scroll-text font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F5F0E8] leading-tight mb-6">Your Next Favorite Cup Is Waiting.</h2></div>
 
-            <p className="text-sm sm:text-base text-[#F5F0E8]/85 font-light leading-relaxed mb-8 max-w-xl">
+            <p className="scroll-fade text-sm sm:text-base text-[#F5F0E8]/85 font-light leading-relaxed mb-8 max-w-xl" style={{ "--reveal-delay": "180ms" }}>
               Visit our coffee shop and enjoy your favorite brew in a warm,
               comfortable space. Kami siap menyajikan cangkir kopi terbaik untuk
               hari Anda.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="scroll-fade flex flex-wrap items-center gap-4" style={{ "--reveal-delay": "280ms" }}>
               <Button href="/contact" variant="primary" size="lg">
                 Visit Us
               </Button>
@@ -358,7 +355,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
     </div>
   );
 }

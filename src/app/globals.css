@@ -131,3 +131,105 @@
 .transition-smooth {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Motion system: transforms and opacity only, for a calm and performant reveal. */
+.text-reveal-clip {
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+
+.reveal-group.reveal-ready .scroll-fade,
+.reveal-group.reveal-ready .scroll-text,
+.reveal-group.reveal-ready .scroll-image,
+.reveal-group.reveal-ready .scroll-card {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.reveal-group.reveal-ready .scroll-fade,
+.reveal-group.reveal-ready .scroll-card {
+  transform: translateY(28px);
+}
+
+.reveal-group.reveal-ready .scroll-text {
+  transform: translateY(110%);
+}
+
+.reveal-group.reveal-ready .scroll-image {
+  transform: translateY(36px) scale(1.02);
+}
+
+.reveal-group.is-revealed .scroll-fade,
+.reveal-group.is-revealed .scroll-card {
+  animation: coffee-fade-up 800ms var(--reveal-delay, 0ms) cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-group.is-revealed .scroll-text {
+  animation: coffee-text-reveal 900ms var(--reveal-delay, 70ms) cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-group.is-revealed .scroll-image {
+  animation: coffee-image-reveal 900ms var(--reveal-delay, 0ms) cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-eyebrow,
+.hero-title,
+.hero-copy,
+.hero-actions,
+.hero-visual,
+.hero-stats {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.hero-eyebrow { animation: coffee-fade-up 650ms 80ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-title { animation: coffee-fade-up 820ms 180ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-copy { animation: coffee-fade-up 760ms 330ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-actions { animation: coffee-fade-up 720ms 460ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-stats { animation: coffee-fade-up 780ms 590ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-visual { animation: coffee-hero-image 950ms 250ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes coffee-fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes coffee-text-reveal {
+  from { opacity: 0; transform: translateY(110%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes coffee-image-reveal {
+  from { opacity: 0; transform: translateY(36px) scale(1.02); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes coffee-hero-image {
+  from { opacity: 0; transform: translateY(20px) scale(1.025); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal-group.reveal-ready .scroll-fade,
+  .reveal-group.reveal-ready .scroll-text,
+  .reveal-group.reveal-ready .scroll-image,
+  .reveal-group.reveal-ready .scroll-card,
+  .hero-eyebrow,
+  .hero-title,
+  .hero-copy,
+  .hero-actions,
+  .hero-visual,
+  .hero-stats {
+    opacity: 1;
+    transform: none;
+  }
+}

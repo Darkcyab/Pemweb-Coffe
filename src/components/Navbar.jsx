@@ -29,9 +29,18 @@ export default function Navbar() {
     setIsOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    if (!isOpen) return undefined;
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [isOpen]);
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,backdrop-filter,border-color,box-shadow,padding] duration-500 ease-out ${
         isScrolled
           ? "bg-[#1A1A1A]/95 backdrop-blur-md py-3.5 border-b border-[#D4AF37]/20 shadow-lg shadow-black/40"
           : "bg-gradient-to-b from-[#1A1A1A]/90 via-[#1A1A1A]/60 to-transparent py-5"
@@ -78,16 +87,13 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm tracking-widest uppercase transition-all duration-200 relative py-1 font-medium ${
+                className={`text-sm tracking-widest uppercase transition-colors duration-300 relative py-1 font-medium after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:bg-[#D4AF37] after:transition-transform after:duration-300 after:ease-out ${
                   isActive
-                    ? "text-[#D4AF37] font-semibold"
-                    : "text-[#F5F0E8]/80 hover:text-[#D4AF37]"
+                    ? "text-[#D4AF37] font-semibold after:scale-x-100"
+                    : "text-[#F5F0E8]/80 after:scale-x-0 hover:text-[#D4AF37] hover:after:scale-x-100"
                 }`}
               >
                 {link.label}
-                {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D4AF37] rounded-full" />
-                )}
               </Link>
             );
           })}
@@ -110,43 +116,20 @@ export default function Navbar() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle navigation menu"
-          className="md:hidden p-2 rounded-sm text-[#F5F0E8] hover:text-[#D4AF37] hover:bg-[#4A2E1B]/30 border border-[#D4AF37]/20 transition-colors"
+          aria-expanded={isOpen}
+          className="md:hidden flex h-10 w-10 items-center justify-center rounded-sm border border-[#D4AF37]/20 text-[#F5F0E8] transition-[color,background-color,border-color] duration-300 hover:border-[#D4AF37]/50 hover:bg-[#4A2E1B]/30 hover:text-[#D4AF37] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]"
         >
-          {isOpen ? (
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
+          <span className="flex w-5 flex-col gap-1.5" aria-hidden="true">
+            <span className={`h-px w-full bg-current transition-transform duration-300 ease-out ${isOpen ? "translate-y-[3.5px] rotate-45" : ""}`} />
+            <span className={`h-px w-full bg-current transition-transform duration-300 ease-out ${isOpen ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
+          </span>
         </button>
       </div>
 
       {/* Mobile Drawer Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-[#1A1A1A] border-b border-[#D4AF37]/20 px-6 py-6 transition-all duration-300 shadow-2xl">
+      <div className={`grid md:hidden transition-[grid-template-rows,opacity] duration-500 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] pointer-events-none opacity-0"}`} aria-hidden={!isOpen}>
+        <div className="overflow-hidden">
+          <div className="border-b border-[#D4AF37]/20 bg-[#1A1A1A] px-6 py-6 shadow-2xl">
           <nav className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
@@ -177,8 +160,9 @@ export default function Navbar() {
               </Button>
             </div>
           </nav>
+          </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
