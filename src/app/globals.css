@@ -1,26 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
 @import "tailwindcss";
 
-@theme {
-  --color-ink: #1a1a1a;
-  --color-coffee: #4a2e1b;
-  --color-gold: #d4af37;
-  --color-cream: #f5f0e8;
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-body: "DM Sans", Arial, sans-serif;
+@layer base {
+  :root {
+    --color-dark: #1A1A1A;
+    --color-dark-deep: #121212;
+    --color-dark-elevated: #242424;
+    --color-brown: #4A2E1B;
+    --color-brown-dark: #2E1B0F;
+    --color-brown-light: #6B4226;
+    --color-gold: #D4AF37;
+    --color-gold-light: #F3E5AB;
+    --color-gold-hover: #E5C358;
+    --color-cream: #F5F0E8;
+    --color-cream-muted: #D8CEBE;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-dark);
+    color: var(--color-cream);
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #1A1A1A;
+    color: #F5F0E8;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background-color: #D4AF37;
+    color: #1A1A1A;
+  }
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: #f5f0e8; color: #1a1a1a; font-family: "DM Sans", Arial, sans-serif; }
-a { color: inherit; text-decoration: none; }
-::selection { background: #d4af37; color: #1a1a1a; }
+/* Custom Utilities for Coffeehouse Design System */
+.bg-coffee-dark {
+  background-color: #1A1A1A;
+}
 
-.page-shell { overflow: hidden; }
-.eyebrow { display: flex; align-items: center; gap: .7rem; color: #d4af37; font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
-.eyebrow::before { content: ""; width: 2rem; height: 1px; background: currentColor; }
-.photo-wash { position: relative; isolation: isolate; }
-.photo-wash::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(140deg, rgba(26,26,26,.06), rgba(26,26,26,.45)); }
-.reveal { animation: rise .8s ease-out both; }
-.reveal-delay { animation: rise .8s .14s ease-out both; }
-@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.bg-coffee-deep {
+  background-color: #121212;
+}
+
+.bg-coffee-brown {
+  background-color: #4A2E1B;
+}
+
+.bg-coffee-card {
+  background: linear-gradient(145deg, #2A1A10 0%, #1E130B 100%);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.bg-coffee-card:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.15);
+}
+
+.text-gold {
+  color: #D4AF37;
+}
+
+.text-gold-light {
+  color: #F3E5AB;
+}
+
+.text-cream {
+  color: #F5F0E8;
+}
+
+.text-cream-muted {
+  color: #C7BAA7;
+}
+
+.border-gold {
+  border-color: #D4AF37;
+}
+
+.border-gold-subtle {
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+.border-brown {
+  border-color: #4A2E1B;
+}
+
+/* Gold Gradient Accents */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA820A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #E5C358 0%, #D4AF37 50%, #B89020 100%);
+}
+
+.gold-gradient-bg:hover {
+  background: linear-gradient(135deg, #F0D06B 0%, #E0BC45 50%, #C79E28 100%);
+}
+
+/* Warm Glow Effects */
+.glow-gold {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.22);
+}
+
+.glow-gold-hover:hover {
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.35);
+}
+
+/* Subtle Warm Vignette */
+.warm-vignette {
+  background: radial-gradient(circle at center, rgba(74, 46, 27, 0.12) 0%, rgba(26, 26, 26, 0.85) 100%);
+}
+
+/* Hero Background Gradient Overlay */
+.hero-overlay {
+  background: linear-gradient(to right, rgba(26, 26, 26, 0.95) 0%, rgba(26, 26, 26, 0.75) 50%, rgba(26, 26, 26, 0.4) 100%);
+}
+
+@media (max-width: 1023px) {
+  .hero-overlay {
+    background: linear-gradient(to top, rgba(26, 26, 26, 0.98) 0%, rgba(26, 26, 26, 0.8) 60%, rgba(26, 26, 26, 0.5) 100%);
+  }
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

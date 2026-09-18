@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/postcss": "latest",
+    "lucide-react": "^0.475.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",

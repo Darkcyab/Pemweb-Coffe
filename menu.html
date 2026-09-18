@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Menu — EMBER Coffee House</title>
+  <meta name="description" content="Simple ingredients. Carefully crafted. Explore our specialty coffee, non-coffee, and freshly baked pastries." />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">☕</div>
+        <div class="brand-text">
+          <h1>EMBER</h1>
+          <span>Coffee &amp; Roastery</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link active">Menu</a></li>
+        <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-primary btn-sm">Order Now</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link active">Menu</a>
+      <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+      <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-primary" style="margin-top: 0.5rem; text-align: center;">Order Now via WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+      <!-- Menu Header (PRD 15) -->
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">Artisan Selection</span>
+        <h2 class="section-heading">Our Menu</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Simple ingredients. Carefully crafted. Biji kopi pilihan dan bahan berkualitas tinggi untuk setiap hidangan.</p>
+      </div>
+
+      <!-- 1. COFFEE CATEGORY (PRD 16) -->
+      <section style="margin-bottom: 4rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+          <h3 class="font-serif" style="font-size: 1.85rem; color: #D4AF37;">Coffee</h3>
+          <span style="flex: 1; height: 1px; background-color: rgba(212, 175, 55, 0.2);"></span>
+        </div>
+
+        <div class="cards-grid-3">
+          <!-- Cappuccino -->
+          <div class="coffee-card">
+            <div class="card-badge">Best Seller</div>
+            <div class="card-img-wrap">
+              <img src="public/images/coffee-1.jpg" alt="Cappuccino" class="card-img" />
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="card-tags">
+                  <span class="card-tag">Espresso</span>
+                  <span class="card-tag">Velvety Foam</span>
+                </div>
+                <h4 class="card-title">Cappuccino</h4>
+                <p class="card-desc">Rich espresso topped with deep layer of velvety steamed milk foam and cocoa dust.</p>
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="card-price-label">Price</span>
+                  <span class="card-price">Rp 28.000</span>
+                </div>
+                <a href="contact.html" class="btn btn-sm btn-outline">Order</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Café Latte -->
+          <div class="coffee-card">
+            <div class="card-badge">Best Seller</div>
+            <div class="card-img-wrap">
+              <img src="public/images/coffee-2.jpg" alt="Café Latte" class="card-img" />
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="card-tags">
+                  <span class="card-tag">Espresso</span>
+                  <span class="card-tag">Silky Milk</span>
+                </div>
+                <h4 class="card-title">Café Latte</h4>
+                <p class="card-desc">Full-bodied espresso balanced with delicately steamed silky milk and thin microfoam.</p>
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="card-price-label">Price</span>
+                  <span class="card-price">Rp 30.000</span>
+                </div>
+                <a href="contact.html" class="btn btn-sm btn-outline">Order</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Americano -->
+          <div class="coffee-card">
+            <div class="card-img-wrap">
+              <img src="public/images/coffee-3.jpg" alt="Americano" class="card-img" />
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="card-tags">
+                  <span class="card-tag">Double Shot</span>
+                  <span class="card-tag">Clean &amp; Bold</span>
+                </div>
+                <h4 class="card-title">Americano</h4>
+                <p class="card-desc">Double shot of house specialty espresso extracted over pure water. Clean, bold &amp; aromatic.</p>
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="card-price-label">Price</span>
+                  <span class="card-price">Rp 24.000</span>
+                </div>
+                <a href="contact.html" class="btn btn-sm btn-outline">Order</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Manual Brew -->
+          <div class="coffee-card">
+            <div class="card-img-wrap">
+              <img src="public/images/hero-coffee.jpg" alt="Manual Brew V60" class="card-img" />
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="card-tags">
+                  <span class="card-tag">Single Origin</span>
+                  <span class="card-tag">Pour Over</span>
+                </div>
+                <h4 class="card-title">Manual Brew V60</h4>
+                <p class="card-desc">Single-origin beans filtered through V60 highlighting floral, fruity and clean tasting notes.</p>
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="card-price-label">Price</span>
+                  <span class="card-price">Rp 32.000</span>
+                </div>
+                <a href="contact.html" class="btn btn-sm btn-outline">Order</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Café Mocha -->
+          <div class="coffee-card">
+            <div class="card-img-wrap">
+              <img src="public/images/coffee-2.jpg" alt="Café Mocha" class="card-img" />
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="card-tags">
+                  <span class="card-tag">Dark Chocolate</span>
+                  <span class="card-tag">Espresso</span>
+                </div>
+                <h4 class="card-title">Café Mocha</h4>
+                <p class="card-desc">Rich espresso combined with premium artisanal Belgian chocolate and steamed milk.</p>
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="card-price-label">Price</span>
+                  <span class="card-price">Rp 32.000</span>
+                </div>
+                <a href="contact.html" class="btn btn-sm btn-outline">Order</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Espresso -->
+          <div class="coffee-card">
+            <div class="card-img-wrap">
+              <img src="public/images/coffee-3.jpg" alt="Espresso" class="card-img" />
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="card-tags">
+                  <span class="card-tag">Intense</span>
+                  <span class="card-tag">Rich Crema</span>
+                </div>
+                <h4 class="card-title">Espresso</h4>
+                <p class="card-desc">Concentrated double extraction with dense golden hazelnut crema.</p>
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="card-price-label">Price</span>
+                  <span class="card-price">Rp 20.000</span>
+                </div>
+                <a href="contact.html" class="btn btn-sm btn-outline">Order</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. FOOD & PASTRY CATEGORY -->
+      <section>
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+          <h3 class="font-serif" style="font-size: 1.85rem; color: #D4AF37;">Fresh Pastry &amp; Food</h3>
+          <span style="flex: 1; height: 1px; background-color: rgba(212, 175, 55, 0.2);"></span>
+        </div>
+
+        <div class="cards-grid-3">
+          <!-- Croissant -->
+          <div class="coffee-card">
+            <div class="card-badge">Best Seller</div>
+            <div class="card-img-wrap">
+              <img src="public/images/pastry.jpg" alt="French Butter Croissant" class="card-img" />
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="card-tags">
+                  <span class="card-tag">Freshly Baked</span>
+                  <span class="card-tag">Normandy Butter</span>
+                </div>
+                <h4 class="card-title">French Butter Croissant</h4>
+                <p class="card-desc">Flaky, layered golden pastry baked fresh daily with pure imported French butter.</p>
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="card-price-label">Price</span>
+                  <span class="card-price">Rp 26.000</span>
+                </div>
+                <a href="contact.html" class="btn btn-sm btn-outline">Order</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pain au Chocolat -->
+          <div class="coffee-card">
+            <div class="card-img-wrap">
+              <img src="public/images/pastry.jpg" alt="Pain au Chocolat" class="card-img" />
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="card-tags">
+                  <span class="card-tag">Dark Chocolate</span>
+                  <span class="card-tag">Puff Pastry</span>
+                </div>
+                <h4 class="card-title">Pain au Chocolat</h4>
+                <p class="card-desc">Classic French puff pastry filled with two batons of premium semi-sweet dark chocolate.</p>
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="card-price-label">Price</span>
+                  <span class="card-price">Rp 28.000</span>
+                </div>
+                <a href="contact.html" class="btn btn-sm btn-outline">Order</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon">☕</div>
+            <div class="brand-text">
+              <h1>EMBER</h1>
+              <span>Coffee &amp; Roastery</span>
+            </div>
+          </div>
+          <p style="font-size: 0.85rem; color: rgba(245, 240, 232, 0.7); line-height: 1.6; max-width: 280px;">
+            Crafting premium specialty coffee and memorable warm moments in a calm, modern minimalist space.
+          </p>
+          <div class="footer-socials">
+            <a href="https://instagram.com/coffeehouse" target="_blank" class="social-btn">IG</a>
+            <a href="https://wa.me/6281234567890" target="_blank" class="social-btn">WA</a>
+            <a href="mailto:hello@coffeehouse.com" class="social-btn">✉</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Opening Hours</h4>
+          <div style="font-size: 0.85rem; line-height: 1.8; color: rgba(245, 240, 232, 0.75);">
+            <p><strong style="color: #F5F0E8;">Mon - Fri:</strong> <span style="color: #D4AF37;">08:00 - 22:00</span></p>
+            <p><strong style="color: #F5F0E8;">Sat - Sun:</strong> <span style="color: #D4AF37;">08:00 - 23:00</span></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Visit Us</h4>
+          <div style="font-size: 0.85rem; line-height: 1.8; color: rgba(245, 240, 232, 0.75);">
+            <p>📍 Jl. Example No. 123, Cilegon, Banten</p>
+            <p>📞 +62 812-3456-7890</p>
+            <p>✉️ hello@coffeehouse.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 EMBER Coffee House. All rights reserved.</p>
+        <p><span style="color: #D4AF37;">Minimalist + Warm + Premium</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
