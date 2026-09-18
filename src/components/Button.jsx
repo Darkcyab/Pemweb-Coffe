@@ -14,7 +14,7 @@ export default function Button({
   ...props
 }) {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium tracking-wider uppercase transition-all duration-300 rounded-sm cursor-pointer select-none active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none";
+    "inline-flex items-center justify-center font-medium tracking-wider uppercase transition-[transform,background-color,border-color,color,box-shadow] duration-300 ease-out rounded-sm cursor-pointer select-none hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37] disabled:opacity-50 disabled:pointer-events-none";
 
   const sizeStyles = {
     sm: "text-xs px-4 py-2 gap-1.5",
@@ -24,7 +24,7 @@ export default function Button({
 
   const variantStyles = {
     primary:
-      "bg-[#D4AF37] hover:bg-[#E5C358] text-[#1A1A1A] font-semibold hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:scale-[1.02]",
+      "bg-[#D4AF37] hover:bg-[#E5C358] text-[#1A1A1A] font-semibold hover:shadow-[0_8px_20px_rgba(212,175,55,0.25)]",
     secondary:
       "bg-[#4A2E1B] hover:bg-[#5C3922] text-[#F5F0E8] border border-[#D4AF37]/50 hover:border-[#D4AF37] hover:text-[#D4AF37] hover:shadow-[0_0_15px_rgba(212,175,55,0.2)]",
     outline:

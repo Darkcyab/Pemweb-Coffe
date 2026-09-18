@@ -6,6 +6,7 @@ export default function CoffeeCard({
   item,
   className = "",
   showOrderBtn = true,
+  style,
 }) {
   const {
     name,
@@ -18,7 +19,8 @@ export default function CoffeeCard({
 
   return (
     <div
-      className={`group relative flex flex-col bg-gradient-to-b from-[#2E1B10] to-[#1E120A] rounded-md overflow-hidden border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_15px_30px_rgba(0,0,0,0.6),0_0_20px_rgba(212,175,55,0.15)] ${className}`}
+      className={`group relative flex flex-col bg-gradient-to-b from-[#2E1B10] to-[#1E120A] rounded-md overflow-hidden border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-[transform,border-color,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(0,0,0,0.48),0_0_16px_rgba(212,175,55,0.12)] ${className}`}
+      style={style}
     >
       {/* Best Seller Badge */}
       {isBestSeller && (
@@ -40,7 +42,7 @@ export default function CoffeeCard({
           alt={name}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out brightness-[0.92] group-hover:brightness-100"
+          className="object-cover object-center transition-[transform,filter] duration-700 ease-out brightness-[0.92] group-hover:scale-[1.03] group-hover:brightness-100"
         />
         {/* Subtle Dark Gradient Overlay at the bottom */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#1E120A] via-transparent to-transparent opacity-80" />
