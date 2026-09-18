@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — EMBER Coffee House</title>
+  <meta name="description" content="Come Say Hello. We'd love to serve you a good cup of coffee. Get in touch with EMBER Coffee House." />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">☕</div>
+        <div class="brand-text">
+          <h1>EMBER</h1>
+          <span>Coffee &amp; Roastery</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-primary btn-sm">Order Now</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link">Menu</a>
+      <a href="contact.html" class="mobile-nav-link active">Contact Us</a>
+      <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-primary" style="margin-top: 0.5rem; text-align: center;">Order Now via WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+      <!-- Header (PRD 21) -->
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">Get in Touch</span>
+        <h2 class="section-heading">Come Say Hello.</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">We'd love to serve you a good cup of coffee. Kunjungi gerai kami atau kirimkan pesan untuk pertanyaan dan reservasi.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information (PRD 22) -->
+        <div class="contact-info-card">
+          <h3 class="font-serif" style="font-size: 1.6rem; color: #D4AF37;">Coffeehouse Details</h3>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <span class="contact-text-label">Location</span>
+              <p class="contact-text-value">Jl. Example No. 123, Cilegon, Banten</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">🕒</div>
+            <div>
+              <span class="contact-text-label">Opening Hours</span>
+              <p class="contact-text-value">Mon - Fri: 08:00 - 22:00</p>
+              <p class="contact-text-value">Sat - Sun: 08:00 - 23:00</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <span class="contact-text-label">Phone &amp; WhatsApp</span>
+              <p class="contact-text-value">+62 812-3456-7890</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <span class="contact-text-label">Email</span>
+              <p class="contact-text-value">hello@coffeehouse.com</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📷</div>
+            <div>
+              <span class="contact-text-label">Instagram</span>
+              <p class="contact-text-value">@coffeehouse</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form (PRD 23) -->
+        <div class="contact-form-box">
+          <h3 class="font-serif" style="font-size: 1.6rem; color: #F5F0E8; margin-bottom: 0.5rem;">Send Us a Message</h3>
+          <p style="font-size: 0.85rem; color: rgba(245, 240, 232, 0.7); font-weight: 300; margin-bottom: 1.75rem;">
+            Punya saran, pertanyaan seputar menu, atau ingin berkolaborasi?
+          </p>
+
+          <!-- Success Alert (Hidden initially) -->
+          <div id="formSuccess" style="display: none; padding: 1.5rem; background-color: rgba(74, 46, 27, 0.6); border: 1px solid #D4AF37; border-radius: 4px; text-align: center;">
+            <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">☕</span>
+            <h4 class="font-serif" style="font-size: 1.25rem; color: #D4AF37; margin-bottom: 0.5rem;">Thank You for Reaching Out!</h4>
+            <p style="font-size: 0.85rem; color: rgba(245, 240, 232, 0.8); font-weight: 300;">Pesan Anda telah kami terima. Barista kami akan segera merespons dalam 1x24 jam.</p>
+            <button type="button" id="resetFormBtn" style="margin-top: 1.25rem; background: none; border: none; color: #D4AF37; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: underline; cursor: pointer;">Send another message</button>
+          </div>
+
+          <!-- The Form -->
+          <form id="contactForm">
+            <div class="form-group">
+              <label class="form-label" for="name">Name *</label>
+              <input type="text" id="name" class="form-input" placeholder="Nama lengkap Anda" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="email">Email *</label>
+                <input type="email" id="email" class="form-input" placeholder="email@example.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="subject">Subject</label>
+                <input type="text" id="subject" class="form-input" placeholder="Topik pesan" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Message *</label>
+              <textarea id="message" class="form-textarea" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Location / Map Area (PRD 24) -->
+      <div class="map-card">
+        <div style="font-size: 2.2rem; margin-bottom: 0.75rem;">🗺️</div>
+        <h4 class="font-serif" style="font-size: 1.4rem; color: #F5F0E8; margin-bottom: 0.5rem;">EMBER Coffeehouse &amp; Roastery Map</h4>
+        <p style="font-size: 0.9rem; color: rgba(245, 240, 232, 0.7); max-width: 500px; margin-bottom: 1.5rem; font-weight: 300;">
+          Jl. Example No. 123, Cilegon, Banten — Lokasi strategis dekat pusat kota dengan area parkir yang luas.
+        </p>
+        <a href="https://maps.google.com" target="_blank" class="btn btn-gold-outline btn-sm">Open in Google Maps</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon">☕</div>
+            <div class="brand-text">
+              <h1>EMBER</h1>
+              <span>Coffee &amp; Roastery</span>
+            </div>
+          </div>
+          <p style="font-size: 0.85rem; color: rgba(245, 240, 232, 0.7); line-height: 1.6; max-width: 280px;">
+            Crafting premium specialty coffee and memorable warm moments in a calm, modern minimalist space.
+          </p>
+          <div class="footer-socials">
+            <a href="https://instagram.com/coffeehouse" target="_blank" class="social-btn">IG</a>
+            <a href="https://wa.me/6281234567890" target="_blank" class="social-btn">WA</a>
+            <a href="mailto:hello@coffeehouse.com" class="social-btn">✉</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Opening Hours</h4>
+          <div style="font-size: 0.85rem; line-height: 1.8; color: rgba(245, 240, 232, 0.75);">
+            <p><strong style="color: #F5F0E8;">Mon - Fri:</strong> <span style="color: #D4AF37;">08:00 - 22:00</span></p>
+            <p><strong style="color: #F5F0E8;">Sat - Sun:</strong> <span style="color: #D4AF37;">08:00 - 23:00</span></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Visit Us</h4>
+          <div style="font-size: 0.85rem; line-height: 1.8; color: rgba(245, 240, 232, 0.75);">
+            <p>📍 Jl. Example No. 123, Cilegon, Banten</p>
+            <p>📞 +62 812-3456-7890</p>
+            <p>✉️ hello@coffeehouse.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 EMBER Coffee House. All rights reserved.</p>
+        <p><span style="color: #D4AF37;">Minimalist + Warm + Premium</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

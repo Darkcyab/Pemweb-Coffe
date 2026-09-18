@@ -1,9 +1,113 @@
-export default function CoffeeCard({ coffee, featured }) {
-  return <article className="group overflow-hidden bg-coffee text-cream transition duration-300 hover:-translate-y-2">
-    <div className="relative h-72 overflow-hidden">
-      <img src={coffee.image} alt={coffee.name} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-      {featured && <span className="absolute left-4 top-4 bg-gold px-3 py-1.5 text-[10px] font-bold tracking-[.12em] text-ink uppercase">Best seller</span>}
+import Image from "next/image";
+import Link from "next/link";
+import Button from "./Button";
+
+export default function CoffeeCard({
+  item,
+  className = "",
+  showOrderBtn = true,
+}) {
+  const {
+    name,
+    description,
+    formattedPrice,
+    image,
+    isBestSeller,
+    tags = [],
+  } = item;
+
+  return (
+    <div
+      className={`group relative flex flex-col bg-gradient-to-b from-[#2E1B10] to-[#1E120A] rounded-md overflow-hidden border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_15px_30px_rgba(0,0,0,0.6),0_0_20px_rgba(212,175,55,0.15)] ${className}`}
+    >
+      {/* Best Seller Badge */}
+      {isBestSeller && (
+        <div className="absolute top-3 right-3 z-20 bg-[#D4AF37] text-[#1A1A1A] text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-sm shadow-md flex items-center gap-1">
+          <svg
+            className="w-3 h-3 fill-current"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+          Best Seller
+        </div>
+      )}
+
+      {/* Image Container */}
+      <div className="relative w-full h-56 sm:h-64 overflow-hidden bg-[#1A1A1A]">
+        <Image
+          src={image || "/images/hero-coffee.jpg"}
+          alt={name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out brightness-[0.92] group-hover:brightness-100"
+        />
+        {/* Subtle Dark Gradient Overlay at the bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1E120A] via-transparent to-transparent opacity-80" />
+      </div>
+
+      {/* Content Container */}
+      <div className="flex flex-col flex-1 p-5 sm:p-6 justify-between">
+        <div>
+          {/* Tags */}
+          {tags.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mb-2.5">
+              {tags.map((tag, idx) => (
+                <span
+                  key={idx}
+                  className="text-[10px] tracking-wider uppercase text-[#D4AF37]/90 bg-[#D4AF37]/10 px-2 py-0.5 rounded-xs"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {/* Coffee Title */}
+          <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#F5F0E8] group-hover:text-[#D4AF37] transition-colors duration-300">
+            {name}
+          </h3>
+
+          {/* Description */}
+          <p className="mt-2 text-xs sm:text-sm text-[#F5F0E8]/70 line-clamp-2 leading-relaxed font-light">
+            {description}
+          </p>
+        </div>
+
+        {/* Footer Area: Price & Action */}
+        <div className="mt-5 pt-4 border-t border-[#D4AF37]/15 flex items-center justify-between">
+          <div>
+            <span className="block text-[10px] text-[#F5F0E8]/50 uppercase tracking-wider">
+              Price
+            </span>
+            <span className="font-serif text-lg sm:text-xl font-bold text-[#D4AF37]">
+              {formattedPrice}
+            </span>
+          </div>
+
+          {showOrderBtn && (
+            <Link
+              href="/menu"
+              className="text-xs uppercase tracking-wider text-[#F5F0E8]/80 hover:text-[#D4AF37] transition-colors flex items-center gap-1 font-medium group/link"
+            >
+              Details
+              <svg
+                className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </Link>
+          )}
+        </div>
+      </div>
     </div>
-    <div className="p-6"><div className="mb-3 flex items-start justify-between gap-4"><h3 className="font-display text-2xl">{coffee.name}</h3><span className="shrink-0 text-sm font-semibold text-gold">{coffee.price}</span></div><p className="text-sm leading-6 text-cream/65">{coffee.description}</p></div>
-  </article>;
+  );
 }

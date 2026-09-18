@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EMBER Coffee House — Crafted Coffee, Warm Moments</title>
+  <meta name="description" content="Carefully crafted coffee for every moment of your day. Specialty single-origin beans roasted to perfection." />
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========================================================================= -->
+  <!-- NAVBAR                                                                    -->
+  <!-- ========================================================================= -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">☕</div>
+        <div class="brand-text">
+          <h1>EMBER</h1>
+          <span>Coffee &amp; Roastery</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+      </ul>
+
+      <!-- Action Button -->
+      <div class="nav-actions">
+        <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-primary btn-sm">Order Now</a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-nav-link active">Home</a>
+      <a href="menu.html" class="mobile-nav-link">Menu</a>
+      <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+      <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-primary" style="margin-top: 0.5rem; text-align: center;">Order Now via WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================================= -->
+    <!-- 1. HERO SECTION (PRD 11.1)                                                -->
+    <!-- ========================================================================= -->
+    <section class="hero-section">
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Specialty Coffee &amp; Roastery
+          </div>
+
+          <h2 class="hero-title">
+            Crafted Coffee,<br />
+            <em>Warm Moments.</em>
+          </h2>
+
+          <p class="hero-desc">
+            Carefully crafted coffee for every moment of your day. Specialty single-origin beans roasted to perfection, served in a warm and serene sanctuary.
+          </p>
+
+          <div class="hero-btn-group">
+            <a href="menu.html" class="btn btn-primary">Explore Menu</a>
+            <a href="contact.html" class="btn btn-secondary">Visit Us</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>100%</h4>
+              <span>Arabica Beans</span>
+            </div>
+            <div class="stat-item">
+              <h4>15+</h4>
+              <span>Signature Brews</span>
+            </div>
+            <div class="stat-item">
+              <h4>4.9 ★</h4>
+              <span>Customer Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-visual-card">
+            <img src="public/images/hero-coffee.jpg" alt="Specialty Coffee Latte Art" class="hero-img" />
+            <div class="hero-floating-badge">
+              <div class="badge-icon">✨</div>
+              <div class="badge-text">
+                <h5>Master Artisan Roast</h5>
+                <p>Freshly roasted single origin every week</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 2. ABOUT SECTION (PRD 12)                                                 -->
+    <!-- ========================================================================= -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-img-box">
+          <img src="public/images/cafe-interior.jpg" alt="EMBER Coffee House Interior" class="about-img" />
+        </div>
+
+        <div class="about-content">
+          <div class="section-title-wrapper text-left" style="margin-bottom: 1.5rem;">
+            <span class="section-subtitle">Our Philosophy</span>
+            <h3 class="section-heading">More Than Just Coffee</h3>
+            <div class="section-divider"></div>
+          </div>
+
+          <p class="section-desc" style="margin-bottom: 1.5rem; font-size: 1.05rem;">
+            Coffee shop yang menghadirkan kopi berkualitas dalam suasana hangat dan nyaman. Setiap cangkir kami racik dengan perhatian mendalam terhadap rasa, aroma, dan pengalaman tak terlupakan.
+          </p>
+
+          <p class="section-desc" style="margin-bottom: 2rem;">
+            Kami percaya bahwa secangkir kopi terbaik bermula dari biji pilihan yang dipetik dengan teliti, disangrai dengan presisi, dan diseduh oleh tangan barista yang berdedikasi penuh.
+          </p>
+
+          <div class="about-highlights">
+            <div class="about-pill">
+              <div class="pill-check">✓</div>
+              <div class="pill-text">
+                <h5>Ethically Sourced</h5>
+                <p>Biji kopi lokal nusantara</p>
+              </div>
+            </div>
+            <div class="about-pill">
+              <div class="pill-check">✓</div>
+              <div class="pill-text">
+                <h5>Warm Ambiance</h5>
+                <p>Suasana tenang &amp; nyaman</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="btn btn-secondary">Find Our Location</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 3. FEATURED COFFEE SECTION (PRD 13)                                       -->
+    <!-- ========================================================================= -->
+    <section class="section" style="background: linear-gradient(180deg, transparent, rgba(74, 46, 27, 0.2), transparent);">
+      <div class="container">
+        <div class="section-title-wrapper">
+          <span class="section-subtitle">Curated Favorites</span>
+          <h3 class="section-heading">Signature Brews</h3>
+          <div class="section-divider"></div>
+          <p class="section-desc">Pilihan menu kopi unggulan racikan barista kami yang paling dicintai pelanggan.</p>
+        </div>
+
+        <div class="cards-grid-3">
+          <!-- Card 1 -->
+          <div class="coffee-card">
+            <div class="card-badge">Best Seller</div>
+            <div class="card-img-wrap">
+              <img src="public/images/coffee-1.jpg" alt="Cappuccino" class="card-img" />
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="card-tags">
+                  <span class="card-tag">Espresso</span>
+                  <span class="card-tag">Velvety Foam</span>
+                </div>
+                <h4 class="card-title">Cappuccino</h4>
+                <p class="card-desc">Rich espresso topped with deep layer of velvety steamed milk foam and cocoa dust.</p>
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="card-price-label">Price</span>
+                  <span class="card-price">Rp 28.000</span>
+                </div>
+                <a href="menu.html" class="btn btn-sm btn-outline">Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="coffee-card">
+            <div class="card-badge">Best Seller</div>
+            <div class="card-img-wrap">
+              <img src="public/images/coffee-2.jpg" alt="Café Latte" class="card-img" />
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="card-tags">
+                  <span class="card-tag">Espresso</span>
+                  <span class="card-tag">Silky Milk</span>
+                </div>
+                <h4 class="card-title">Café Latte</h4>
+                <p class="card-desc">Full-bodied espresso balanced with delicately steamed silky milk and thin microfoam.</p>
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="card-price-label">Price</span>
+                  <span class="card-price">Rp 30.000</span>
+                </div>
+                <a href="menu.html" class="btn btn-sm btn-outline">Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="coffee-card">
+            <div class="card-img-wrap">
+              <img src="public/images/coffee-3.jpg" alt="Americano" class="card-img" />
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="card-tags">
+                  <span class="card-tag">Double Shot</span>
+                  <span class="card-tag">Clean &amp; Bold</span>
+                </div>
+                <h4 class="card-title">Americano</h4>
+                <p class="card-desc">Double shot of house specialty espresso extracted over pure water. Clean, bold &amp; aromatic.</p>
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="card-price-label">Price</span>
+                  <span class="card-price">Rp 24.000</span>
+                </div>
+                <a href="menu.html" class="btn btn-sm btn-outline">Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 4. VALUE PILLARS                                                          -->
+    <!-- ========================================================================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title-wrapper">
+          <span class="section-subtitle">The EMBER Standard</span>
+          <h3 class="section-heading">Why Choose Our House</h3>
+          <div class="section-divider"></div>
+          <p class="section-desc">Pengalaman menikmati kopi premium yang dirancang untuk kenyamanan dan kenikmatan Anda.</p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">🌱</div>
+            <h4 class="pillar-title">Specialty Beans</h4>
+            <p class="pillar-desc">100% biji Arabika pilihan dari perkebunan terbaik dengan roasting terstandarisasi.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">⚙️</div>
+            <h4 class="pillar-title">Artisan Brewing</h4>
+            <p class="pillar-desc">Presisi mesin espresso dan metode pour-over manual untuk aroma optimal.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🕯️</div>
+            <h4 class="pillar-title">Cozy Atmosphere</h4>
+            <p class="pillar-desc">Interior hangat, pencahayaan temaram, dan suasana tenang untuk berbincang.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🥐</div>
+            <h4 class="pillar-title">Fresh Pastry</h4>
+            <p class="pillar-desc">Croissant dan roti artisanal dipanggang segar setiap pagi dengan French butter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 5. CTA BANNER (PRD 14)                                                    -->
+    <!-- ========================================================================= -->
+    <section class="section" style="padding-bottom: 6rem;">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-glow"></div>
+          <div class="cta-content">
+            <span class="cta-eyebrow">Warm Welcome Awaits</span>
+            <h3 class="cta-title">Your Next Favorite Cup Is Waiting.</h3>
+            <p class="cta-desc">Visit our coffee shop and enjoy your favorite brew in a warm and comfortable space. Kami siap menyajikan cangkir kopi terbaik untuk hari Anda.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+              <a href="contact.html" class="btn btn-primary">Visit Us</a>
+              <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-outline">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER (PRD 25)                                                           -->
+  <!-- ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon">☕</div>
+            <div class="brand-text">
+              <h1>EMBER</h1>
+              <span>Coffee &amp; Roastery</span>
+            </div>
+          </div>
+          <p style="font-size: 0.85rem; color: rgba(245, 240, 232, 0.7); line-height: 1.6; max-width: 280px;">
+            Crafting premium specialty coffee and memorable warm moments in a calm, modern minimalist space.
+          </p>
+          <div class="footer-socials">
+            <a href="https://instagram.com/coffeehouse" target="_blank" class="social-btn" aria-label="Instagram">IG</a>
+            <a href="https://wa.me/6281234567890" target="_blank" class="social-btn" aria-label="WhatsApp">WA</a>
+            <a href="mailto:hello@coffeehouse.com" class="social-btn" aria-label="Email">✉</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Opening Hours</h4>
+          <div style="font-size: 0.85rem; line-height: 1.8; color: rgba(245, 240, 232, 0.75);">
+            <p><strong style="color: #F5F0E8;">Mon - Fri:</strong> <span style="color: #D4AF37;">08:00 - 22:00</span></p>
+            <p><strong style="color: #F5F0E8;">Sat - Sun:</strong> <span style="color: #D4AF37;">08:00 - 23:00</span></p>
+            <p style="font-size: 0.75rem; color: rgba(245, 240, 232, 0.5); margin-top: 0.5rem;">*Dine in &amp; Take away available</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Visit Us</h4>
+          <div style="font-size: 0.85rem; line-height: 1.8; color: rgba(245, 240, 232, 0.75);">
+            <p>📍 Jl. Example No. 123, Cilegon, Banten</p>
+            <p>📞 +62 812-3456-7890</p>
+            <p>✉️ hello@coffeehouse.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 EMBER Coffee House. All rights reserved.</p>
+        <p><span style="color: #D4AF37;">Minimalist + Warm + Premium</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
